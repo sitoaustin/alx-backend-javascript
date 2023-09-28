@@ -1,13 +1,4 @@
-function divideFunction(numerator, denominator) {
-  if (denominator === 0) throw new Error('cannot divide by 0');
-  try {
-    return numerator / denominator;
-  } catch (error) {
-    return error;
-  }
-}
-
-function guardrail(mathFunction) {
+export default function guardrail(mathFunction) {
   const responses = [];
   try {
     const response = mathFunction();
@@ -19,5 +10,3 @@ function guardrail(mathFunction) {
   }
   return responses;
 }
-
-console.log(guardrail(() => divideFunction(10, 0)));
