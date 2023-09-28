@@ -11,7 +11,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       if (item.status === 'rejected') {
         newList.push({
           status: item.status,
-          value: item.reason,
+          value: item.reason.message,
         });
       } else {
         newList.push(item);
@@ -20,3 +20,5 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     return newList;
   });
 }
+
+console.log(handleProfileSignup(1, 2, 3));
