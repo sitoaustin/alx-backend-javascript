@@ -7,6 +7,9 @@ export default class HolbertonCourse {
     } else if (typeof students !== 'object') {
       throw new Error('Students must be an arrays of Strings');
     }
+    students.forEach((student)=>{
+        if(typeof student !== "string") throw new Error("Student must be a string")
+    })
     this._name = name;
     this._length = length;
     this._students = students;
