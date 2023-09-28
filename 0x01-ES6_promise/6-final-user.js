@@ -14,11 +14,12 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
           value: item.reason.message,
         });
       } else {
-        newList.push(item);
+        newList.push({
+          status: item.status,
+          value: item.value,
+        });
       }
     }
     return newList;
   });
 }
-
-console.log(handleProfileSignup(1, 2, 3));
