@@ -7,11 +7,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
 
   return Promise.allSettled([duploadPhoto, dSignUpUser]).then((res) => {
     const newList = [];
-    res.forEach((element) => {
-      if (element.status === 'fulfilled') {
-        newList.push({ status: element.status, value: element.value });
+    res.forEach((item) => {
+      if (item.status === 'fulfilled') {
+        newList.push({ status: item.status, value: item.value });
       } else {
-        newList.push({ status: element.status, value: `${element.reason}` });
+        newList.push({ status: item.status, value: `${item.reason}` });
       }
     });
     return newList;
